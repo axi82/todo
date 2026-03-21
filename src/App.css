@@ -1,0 +1,169 @@
+.app {
+  width: min(100%, 28rem);
+}
+
+.app__header {
+  margin-bottom: 1.25rem;
+}
+
+.app__title {
+  margin: 0;
+  font-size: 1.75rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.app__subtitle {
+  margin: 0.35rem 0 0;
+  font-size: 0.875rem;
+  color: #8b949e;
+}
+
+.composer {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.composer__input {
+  flex: 1;
+  min-width: 0;
+  padding: 0.6rem 0.75rem;
+  border: 1px solid #30363d;
+  border-radius: 8px;
+  background: #161b22;
+  color: inherit;
+  font-size: 1rem;
+}
+
+.composer__input:focus {
+  outline: 2px solid #388bfd;
+  outline-offset: 0;
+  border-color: #388bfd;
+}
+
+.composer__add {
+  padding: 0.6rem 1rem;
+  border: none;
+  border-radius: 8px;
+  background: #238636;
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.9375rem;
+  cursor: pointer;
+}
+
+.composer__add:hover {
+  background: #2ea043;
+}
+
+.composer__add:active {
+  transform: translateY(1px);
+}
+
+.filters {
+  display: flex;
+  gap: 0.35rem;
+  margin-bottom: 0.75rem;
+}
+
+.filters__btn {
+  padding: 0.35rem 0.65rem;
+  border: 1px solid #30363d;
+  border-radius: 6px;
+  background: transparent;
+  color: #c9d1d9;
+  font-size: 0.8125rem;
+  cursor: pointer;
+}
+
+.filters__btn:hover {
+  background: #21262d;
+}
+
+.filters__btn--active {
+  border-color: #388bfd;
+  background: #1f3a5f;
+  color: #e8eaed;
+}
+
+.empty {
+  margin: 0;
+  padding: 1rem 0;
+  color: #8b949e;
+  font-size: 0.9375rem;
+}
+
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border: 1px solid #30363d;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #161b22;
+}
+
+.list__item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.65rem 0.75rem;
+  border-bottom: 1px solid #30363d;
+}
+
+.list__item:last-child {
+  border-bottom: none;
+}
+
+.list__label {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  flex: 1;
+  min-width: 0;
+  cursor: pointer;
+}
+
+.list__check {
+  width: 1.1rem;
+  height: 1.1rem;
+  flex-shrink: 0;
+  accent-color: #238636;
+}
+
+.list__text {
+  word-break: break-word;
+}
+
+.list__text--done {
+  text-decoration: line-through;
+  color: #8b949e;
+}
+
+.list__remove {
+  flex-shrink: 0;
+  width: 2rem;
+  height: 2rem;
+  padding: 0;
+  border: none;
+  border-radius: 6px;
+  background: transparent;
+  color: #8b949e;
+  font-size: 1.35rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.list__remove:hover {
+  background: #21262d;
+  color: #f85149;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.75rem;
+  font-size: 0.8125rem;
+  color: #8b949e;
+}
