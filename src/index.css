@@ -1,9 +1,21 @@
 :root {
-  font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --bg-deep: #07060d;
+  --bg-panel: rgba(8, 6, 18, 0.92);
+  --neon-cyan: #00f5ff;
+  --neon-cyan-dim: rgba(0, 245, 255, 0.35);
+  --neon-magenta: #ff2a6d;
+  --neon-magenta-dim: rgba(255, 42, 109, 0.4);
+  --neon-purple: #bc13fe;
+  --text: #e8f4ff;
+  --text-muted: #6b7c8f;
+  --border: rgba(0, 245, 255, 0.22);
+  --grid-line: rgba(0, 245, 255, 0.06);
+
+  font-family: "JetBrains Mono", ui-monospace, monospace;
   line-height: 1.5;
   font-weight: 400;
-  color: #e8eaed;
-  background-color: #0f1419;
+  color: var(--text);
+  background-color: var(--bg-deep);
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -18,9 +30,37 @@
 body {
   margin: 0;
   min-height: 100vh;
+  background-color: var(--bg-deep);
+  background-image:
+    linear-gradient(180deg, rgba(188, 19, 254, 0.07) 0%, transparent 42%),
+    linear-gradient(90deg, var(--grid-line) 1px, transparent 1px),
+    linear-gradient(var(--grid-line) 1px, transparent 1px);
+  background-size:
+    100% 100%,
+    24px 24px,
+    24px 24px;
+  background-position: center top;
+}
+
+body::after {
+  content: "";
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 0, 0, 0.12) 2px,
+    rgba(0, 0, 0, 0.12) 4px
+  );
+  opacity: 0.35;
+  z-index: 0;
 }
 
 #root {
+  position: relative;
+  z-index: 1;
   min-height: 100vh;
   display: flex;
   align-items: flex-start;
