@@ -1,6 +1,6 @@
 # Put the same `external` network name your Traefik stack uses (often `traefik` or `proxy`).
 networks:
-  traefik:
+  dokploy-network:
     external: true
 
 services:
@@ -11,7 +11,7 @@ services:
       - traefik
     labels:
       - traefik.enable=true
-      - traefik.docker.network=traefik
+      - traefik.docker.network=dokploy-network
       - traefik.http.routers.todo.rule=Host(`todo.ineedparts.co.uk`)
       - traefik.http.routers.todo.entrypoints=websecure
       - traefik.http.routers.todo.tls=true
