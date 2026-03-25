@@ -1,6 +1,20 @@
+# Put the same `external` network name your Traefik stack uses (often `traefik` or `proxy`).
+networks:
+  traefik:
+    external: true
+
 services:
   web:
     build: .
-    ports:
-      - "8080:80"
     restart: unless-stopped
+    networks:
+      - traefik
+    labels:
+      - traefik.enable=true
+      - traefik.docker.network=traefik
+      - traefik.http.routers.todo.rule=Host(`todo.ineedparts.co.uk`)
+      - traefik.http.routers.todo.entrypoints=websecure
+      - traefik.http.routers.todo.tls=true
+      - traefik.http.routers.todo.tls.certresolver=letsencrypt
+      - traefik.http.routers.todo.service=todo
+      - traefik.http.services.todo.loadbalancer.server.port=80
